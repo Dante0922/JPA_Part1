@@ -23,6 +23,9 @@ public class Member {
 
     @JsonIgnore
     @OneToMany(mappedBy = "member")
+    // colletion은 필드에서 바로 초기화하는 것이 안전하다.
+    // 하이버네이트로 감쌀 경우 에러가 객체가 감싸지기 때문
     private List<Order> orders = new ArrayList<>();
+
 
 }
